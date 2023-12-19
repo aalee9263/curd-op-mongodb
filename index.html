@@ -9,11 +9,40 @@
     <form onsubmit="addUser (); return false">
         
         <input type="text" id="firstName">
+        <br>
         <input type="text" id="secondName">
+        <br>
         <button type="submit">addUser</button>
     
     </form>
+    <script>
 
+        
+baseUrl = 'http://localhost:5001';
+
+let addUser = () => {
+
+    let firstName = document.querySelector("#firstName").value
+    let secondName = document.querySelector("#secondName").value
+    
+axios.post(`${baseUrl}/user`, {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+
+  .then(function (response) {
+    console.log("response is successful")
+    console.log(response.data);
+
+    document.querySelector("")
+  
+})
+
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+    </script>
     <script type="module">
         import axios from 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.mjs';
     </script>
